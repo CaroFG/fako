@@ -16,33 +16,33 @@
 
 @font-face {
   font-family: 'Vanity';
-  src: url("../fonts/Vanity-BoldWideItalic.ttf") format("truetype"); }
+  src: url("/assets/Vanity-BoldWideItalic.ttf") format("truetype"); }
 
-  @import url('https://fonts.googleapis.com/css?family=Blinker&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css?family=Blinker&display=swap');
 
 
 @font-face {
   font-family: 'VanityLight';
-  src: url("../fonts/Vanity-Light.ttf"); }
+  src: url("/assets/Vanity-Light.ttf"); }
 html * {
   margin: 0px;
   padding: 0px; }
 
 @font-face {
 	font-family: 'NexaBold';
-	src: url('../fonts/Nexa-Bold.ttf');
+	src: url('/assets/Nexa-Bold.ttf');
 }
 
 @font-face {
 	font-family: 'NexaLight';
-	src: url('../fonts/Nexa-LIght.ttf');
+	src: url('/assets/Nexa-LIght.ttf');
 }
 
- .fall-down {
+ h1.fall-down {
   	font-family: 'Vanity';
-  	font-weight: normal;
+	font-weight: bold;
+	font-size: 250px;
+	color: black;
   }
 
 ul {
@@ -62,9 +62,6 @@ body {
 
   font-family: 'Lato';
 }
-
-
-
 
 
 .footer {
@@ -287,6 +284,10 @@ h3:after {
   text-decoration: none;
   color: white; }
 
+.main-picture {
+	max-width: 50%
+}
+
 .fa-box-open {
   font-size: 25px; }
 
@@ -312,8 +313,7 @@ h3:after {
   border: none; }
 
 
-
-.fall-down.words .char {
+.splitting.words .char {
   animation: slide-down 1s forwards;
   animation-delay: calc(.5s + (.1s * var(--char-index)));
   opacity: 0; 
@@ -363,3 +363,4 @@ h3:after {
 	left: 104%;
 	position: absolute;
 }
+

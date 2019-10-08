@@ -313,7 +313,7 @@ h3:after {
   border: none; }
 
 
-.splitting.words .char {
+.fall-down.words .char {
   animation: slide-down 1s forwards;
   animation-delay: calc(.5s + (.1s * var(--char-index)));
   opacity: 0; 

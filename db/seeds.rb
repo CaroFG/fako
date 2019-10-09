@@ -11,6 +11,14 @@ require 'faker'
 
 User.destroy_all
 Item.destroy_all
+Category.destroy_all
+Type.destroy_all
+
+@male = Category.create(sex: "Homme")
+@female = Category.create(sex: "Femme")
+@pull = Type.create(name: "pull")
+@chemise = Type.create(name: "chemise")
+@pantalon = Type.create(name: "pantalon")
 
 # ---------------------------- We create our users and our items ---------------------------- #
 20.times do 
@@ -22,14 +30,25 @@ Item.destroy_all
 		password: Faker::Internet.password)
 
 	item = Item.create!(
-		title: Faker::Lorem.sentence,
-		description: Faker::Lorem.paragraph_by_chars(152, false),
+		name: "homme",
 		price: rand(1..1000),
-		image_url: ["https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80", "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "https://images.unsplash.com/photo-1466618786657-4df462be674e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", "https://images.unsplash.com/photo-1513780043732-614405263485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", "https://pbs.twimg.com/media/DLk1g-CVwAAaIFh.jpg"].sample)
+		category: @male,
+		type: @pantalon)
+	
+	item = Item.create!(
+		name: "femme",
+		price: rand(1..1000),
+		category: @female,
+		type: @chemise)
+
 
 	# Puts to show every time an item is added
 	puts "Item added"
 end
+
+
+
+
 
 # We create an admin
 user = User.create!(
@@ -37,7 +56,7 @@ user = User.create!(
 		first_name: "John",
 		last_name: "Neige",
 		password: "dumdum",
-		is_admin: true)
+		)
 
 puts "-----------------------------"
 puts "------- Admin created! ------"

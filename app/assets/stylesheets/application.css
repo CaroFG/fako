@@ -364,3 +364,22 @@ h3:after {
 	position: absolute;
 }
 
+.model-picture {
+  height: 800px;
+  width: 555px;
+}
+
+.pt-1 {
+  color: black; 
+  position: absolute; 
+  left: 95%; 
+  width: 23px;
+}
+
+.premium {
+  max-height: 500px; 
+  width: auto;
+}
+#premium-grey {
+  filter: grayscale(100%);"
+}

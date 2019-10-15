@@ -383,3 +383,30 @@ h3:after {
 #premium-grey {
   filter: grayscale(100%);"
 }
+
+#premium-title{
+  color: black; 
+  font-family: 'Montserrat'; 
+  font-size: 60px; 
+  letter-spacing: 15px;
+}
+
+.subtitle {
+  font-family: 'Montserrat'; 
+  font-size: 25px; 
+}
+
+.detail {
+  max-width:100%; 
+  height:auto;
+}
+
+.recycle {
+  width: 30px;
+}
+
+h4.item {
+  font-family: 'Montserrat';
+  font-weight: bold; }
+}
+

@@ -1,0 +1,30 @@
+		<div class="container mt-4">
+			<div class="row mt-5">
+				<div class="col-8">
+					<%=image_tag @item.image_path, alt:@item.name, class: 'detail'%>
+				</div>
+				<div class="col-4 mt-5 pt-5 " style="text-align: left; padding-left: 8%; padding-right: auto;">
+					<h4 class="mb-4 item"><%=@item.name%> </h4>
+					<p><%=@item.price%> EUR</p>
+					<p>REF - <%=Random.rand(1000...9000)%>/<%=Random.rand(100...900)%></p>
+					<p><%=@item.description%></p>
+					<p>Le mannequin mesure: 177 cm</p>
+					<p class="separator"></p>
+					<p>S</p>
+					<p>M</p>
+					<p>L</p>
+					<p>XL</p>
+					<p class="separator"></p>
+					<!-- Add to cart button -->
+					<%= link_to "Ajouter", cart_items_path(item_id: @item.id), method: "POST", class: "btn-sm button" %>
+
+					<ul class="pl-3 mt-3" style="list-style-type: square;">
+						<li>Composition et entretien</li>
+						<li>Voir disponibilités en magasin</li>
+						<li>Livraison, échange et retours</li>
+						<li>Partager</li>
+					</ul>
+					<%=image_tag 'icons/recycle.png', alt:"recycle icon", class: 'recycle'%>
+				</div>
+			</div>
+		</div>

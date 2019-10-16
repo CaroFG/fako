@@ -58,7 +58,9 @@
         <%=link_to(categories_path, class: "navbar2-link mx-4") do
           "VÊTEMENTS"
           end%>
-				<a class="navbar2-link mx-4"href="#"> CHAUSSURES </a>
+				  <%=link_to(types_path, class: "navbar2-link mx-4") do
+          "CHAUSSURES"
+          end%>
 				<a class="navbar2-link mx-4"href="#"> ACCESSOIRES </a>
         <%= link_to(root_path(anchor: 'premium-title'), class: "navbar2-link mx-4") do 
         "PREMIUM"

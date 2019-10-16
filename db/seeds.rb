@@ -16,12 +16,15 @@ Type.destroy_all
 
 @male = Category.create(sex: "Homme")
 @female = Category.create(sex: "Femme")
+@unisex = Category.create(sex: "Unisex")
 @pull = Type.create(name: "pull")
 @chemise = Type.create(name: "chemise")
 @pantalon = Type.create(name: "pantalon")
 @totallook = Type.create(name: "totallook")
 @robe = Type.create(name: "robe")
 @veste = Type.create(name: "veste")
+@chaussures = Type.create(name: "chaussures")
+@accessoires = Type.create(name: "accessoires")
 
 # ---------------------------- We create our users and our items ---------------------------- #
 20.times do 
@@ -100,6 +103,38 @@ item = Item.create!(
 	type: @veste,
 	description: Faker::Lorem.sentence,
 	image_path: "charles.jpg")
+
+item = Item.create!(
+	name: "Baskets",
+	price: 100,
+	category: @unisex,
+	type: @chaussures,
+	description: Faker::Lorem.sentence,
+	image_path: "colorful-sneakers.jpeg")
+
+item = Item.create!(
+	name: "Bottines transparentes",
+	price: 130,
+	category: @femme,
+	type: @chaussures,
+	description: Faker::Lorem.sentence,
+	image_path: "transparent-boots.jpeg")
+
+item = Item.create!(
+	name: "Chaussures à lacets",
+	price: 70,
+	category: @femme,
+	type: @chaussures,
+	description: Faker::Lorem.sentence,
+	image_path: "smart-shoes.jpeg")
+
+item = Item.create!(
+	name: "Boots",
+	price: 150,
+	category: @unisex,
+	type: @chaussures,
+	description: Faker::Lorem.sentence,
+	image_path: "brown-boots.jpeg")
 
 # We create an admin
 user = User.create!(

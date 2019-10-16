@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "static_pages#home"
   resources :items
   resources :categories
+  resources :types
   resources :carts, only: [:show, :update]
   resources :orders, only: [:create]
   resources :cart_items, only: [:create, :update, :destroy]

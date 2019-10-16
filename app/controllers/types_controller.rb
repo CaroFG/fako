@@ -1,7 +1,7 @@
 class TypesController < ApplicationController
 	def index
-	name = params[:c] # should be all in this case
-  @items = Item.where(:type_id => name)
+	type = params[:type] # should be all in this case
+  @items = Item.where(:type_id => type)
 	end
 
 	def show

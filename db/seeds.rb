@@ -27,7 +27,7 @@ Type.destroy_all
 @accessoires = Type.create(name: "accessoires")
 
 # ---------------------------- We create our users and our items ---------------------------- #
-20.times do 
+5.times do 
 
 	user = User.create!(
 		email: Faker::Internet.email,
@@ -35,7 +35,7 @@ Type.destroy_all
 		last_name: Faker::Name.last_name,
 		password: Faker::Internet.password)
 	# Puts to show every time an item is added
-	puts "Item added"
+	puts "User added"
 end
 
 
@@ -47,6 +47,7 @@ item = Item.create!(
 		type: @totallook,
 		description: Faker::Lorem.sentence,
 		image_path: "sangoku-woman.jpg")
+puts "Item added"
 
 item = Item.create!(
 		name: "Chemisier en satin",
@@ -55,6 +56,7 @@ item = Item.create!(
 		type: @chemise,
 		description: Faker::Lorem.sentence,
 		image_path: "plant-girl.jpg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Total look bleu",
@@ -63,6 +65,7 @@ item = Item.create!(
 	type: @totallook,
 	description: Faker::Lorem.sentence,
 	image_path: "jean.jpg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Robe à motifs",
@@ -71,6 +74,7 @@ item = Item.create!(
 	type: @robe,
 	description: Faker::Lorem.sentence,
 	image_path: "dress.jpg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Veste en daim",
@@ -79,6 +83,7 @@ item = Item.create!(
 	type: @veste,
 	description: Faker::Lorem.sentence,
 	image_path: "man1.jpeg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Pantalon extra-slim",
@@ -87,6 +92,7 @@ item = Item.create!(
 	type: @pantalon,
 	description: Faker::Lorem.sentence,
 	image_path: "trouser-man.jpg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Pantalon à carreaux",
@@ -95,6 +101,7 @@ item = Item.create!(
 	type: @pantalon,
 	description: Faker::Lorem.sentence,
 	image_path: "check-pants.jpg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Veste de costume",
@@ -103,6 +110,7 @@ item = Item.create!(
 	type: @veste,
 	description: Faker::Lorem.sentence,
 	image_path: "charles.jpg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Baskets",
@@ -111,30 +119,71 @@ item = Item.create!(
 	type: @chaussures,
 	description: Faker::Lorem.sentence,
 	image_path: "colorful-sneakers.jpeg")
+puts "Unisex item added"
 
 item = Item.create!(
 	name: "Bottines transparentes",
 	price: 130,
-	category: @femme,
+	category: @female,
 	type: @chaussures,
 	description: Faker::Lorem.sentence,
 	image_path: "transparent-boots.jpeg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Chaussures à lacets",
 	price: 70,
-	category: @femme,
+	category: @female,
 	type: @chaussures,
 	description: Faker::Lorem.sentence,
 	image_path: "smart-shoes.jpeg")
+puts "Item added"
 
 item = Item.create!(
 	name: "Boots",
-	price: 150,
+	price: 100,
 	category: @unisex,
 	type: @chaussures,
 	description: Faker::Lorem.sentence,
 	image_path: "brown-boots.jpeg")
+puts "Unisex item added"
+
+item = Item.create!(
+	name: "Banane",
+	price: 35,
+	category: @unisex,
+	type: @accessoires,
+	description: Faker::Lorem.sentence,
+	image_path: "fanny-pack.jpeg")
+puts "Unisex item added"
+
+item = Item.create!(
+	name: "Lunettes de soleil",
+	price: 100,
+	category: @female,
+	type: @accessoires,
+	description: Faker::Lorem.sentence,
+	image_path: "sunglasses.jpeg")
+puts "Item added"
+
+
+item = Item.create!(
+	name: "Boucle d'oreille tête de mort",
+	price: 25,
+	category: @unisex,
+	type: @accessoires,
+	description: Faker::Lorem.sentence,
+	image_path: "skull-earring.jpeg")
+puts "Unisex item added"
+
+item = Item.create!(
+	name: "Montre",
+	price: 65,
+	category: @unisex,
+	type: @accessoires,
+	description: Faker::Lorem.sentence,
+	image_path: "watch.jpeg")
+puts "Unisex item added"
 
 # We create an admin
 user = User.create!(

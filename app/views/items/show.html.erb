@@ -8,12 +8,29 @@
 					<p><%=@item.price%> EUR</p>
 					<p>REF - <%=Random.rand(1000...9000)%>/<%=Random.rand(100...900)%></p>
 					<p><%=@item.description%></p>
-					<p>Le mannequin mesure: 177 cm</p>
+					<p>Le mannequin mesure: <%=Random.rand(170...185)%></p>
 					<p class="separator"></p>
+					<% if @item.type.name === "chaussures"%>
+
+					<p>36</p>
+					<p>37</p>
+					<p>38</p>
+					<p>39</p>
+					<p>40</p>
+					<p>41</p>
+					<p>42</p>
+					<p>43</p>
+
+					<% elsif @item.type.name === "accessoires" %>
+					<p>TU</p>
+					
+					<% else %>
+			
 					<p>S</p>
 					<p>M</p>
 					<p>L</p>
 					<p>XL</p>
+					<%end%>
 					<p class="separator"></p>
 					<!-- Add to cart button -->
 					<%= link_to "Ajouter", cart_items_path(item_id: @item.id), method: "POST", class: "btn-sm button" %>

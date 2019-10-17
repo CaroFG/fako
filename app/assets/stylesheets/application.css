@@ -405,8 +405,13 @@ h3:after {
   width: 30px;
 }
 
+
 h4.item {
   font-family: 'Montserrat';
   font-weight: bold; }
 }
 
+
+.items-count {
+  font-size: 10px;
+}

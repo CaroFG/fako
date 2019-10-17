@@ -9,7 +9,15 @@
 				
 				<div style="text-align: left;" class="mt-1">
 					<p class="girl-bg"> <%= item.name %> 
-						<i class="far fa-heart mr-4 pt-1"></i>
+						<% if current_or_guest_user.favorited?(item) %>
+							<%=link_to(item_favorite_path(item_id: item.id),  method: "delete") do %>
+							<i class="fas fa-heart mr-4 pt-1"></i>
+							<%end%>
+						<%else%>
+							<%=link_to(item_favorite_path(item_id: item.id),  method: "post") do %>
+							<i class="far fa-heart mr-4 pt-1"></i>
+							<%end%>
+						<%end%>
 					<br>
 						 <%= item.description %> 
 					</br>

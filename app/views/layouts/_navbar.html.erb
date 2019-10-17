@@ -37,7 +37,10 @@
    <%end%>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="far fa-heart mr-4"></i></a>
+        <%= link_to favorites_path(user_id: current_or_guest_user), method: "get", class: "nav-link" do %>
+       
+        <i class="fas fa-heart"></i> <span class="items-count mr-4"><%= current_or_guest_user.favorites_count %> </span>
+        <%end%>
       </li>
       <li class="nav-item">
         <%= link_to cart_path(id: current_or_guest_user.cart), method: "get", class: "nav-link" do %>

@@ -415,3 +415,12 @@ h4.item {
 .items-count {
   font-size: 10px;
 }
+
+.fav-link {
+  color: black;
+}
+
+.fav-link:hover {
+  color: black;
+  text-decoration: none;
+}

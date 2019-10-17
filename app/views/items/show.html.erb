@@ -4,7 +4,19 @@
 					<%=image_tag @item.image_path, alt:@item.name, class: 'detail'%>
 				</div>
 				<div class="col-4 mt-5 pt-5 " style="text-align: left; padding-left: 8%; padding-right: auto;">
-					<h4 class="mb-4 item"><%=@item.name %> <i class="far fa-heart"></i></h4>
+					<h4 class="mb-4 item"> <%=@item.name %> </h4>
+					<p>
+						<% if current_or_guest_user.favorited?(@item) %>
+							<%=link_to(item_favorite_path(item_id: @item.id),  method: "delete") do %>
+							<i class="fas fa-heart"></i>
+							<%end%>
+						<%else%>
+							<%=link_to(item_favorite_path(item_id: @item.id),  method: "post") do %>
+							<i class="far fa-heart"></i>
+							<%end%>
+						<%end%>
+					</p>
+					
 					<p><%=@item.price%> EUR</p>
 					<p>REF - <%=Random.rand(1000...9000)%>/<%=Random.rand(100...900)%></p>
 					<p><%=@item.description%></p>

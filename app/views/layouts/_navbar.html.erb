@@ -39,7 +39,7 @@
       <li class="nav-item">
         <%= link_to favorites_path(user_id: current_or_guest_user), method: "get", class: "nav-link" do %>
        
-        <i class="fas fa-heart"></i> <span class="items-count mr-4"><%= current_or_guest_user.favorites_count %> </span>
+        <i class="fa-heart fas mr-4"></i> 
         <%end%>
       </li>
       <li class="nav-item">

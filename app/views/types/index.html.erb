@@ -11,11 +11,11 @@
 					<p class="girl-bg"> <%= item.name %> 
 						<% if current_or_guest_user.favorited?(item) %>
 							<%=link_to(item_favorite_path(item_id: item.id),  method: "delete") do %>
-							<i class="fas fa-heart mr-4 pt-1"></i>
+							<i class="fas fa-heart mr-4 pt-1 love"></i>
 							<%end%>
 						<%else%>
 							<%=link_to(item_favorite_path(item_id: item.id),  method: "post") do %>
-							<i class="far fa-heart mr-4 pt-1"></i>
+							<i class="far fa-heart mr-4 pt-1 love"></i>
 							<%end%>
 						<%end%>
 					<br>

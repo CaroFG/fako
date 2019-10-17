@@ -15,4 +15,14 @@
 //= require turbolinks
 //= require_tree .
 
-Splitting();
+
+var hearts = document.getElementsByClassName('love');
+
+var heartsArray = Array.from(hearts)
+
+heartsArray.forEach(function(element) {
+	element.addEventListener('click', function(){
+		element.classList.toggle('far')
+		element.classList.toggle('fas')
+	})
+})

@@ -8,11 +8,11 @@
 					<p>
 						<% if current_or_guest_user.favorited?(@item) %>
 							<%=link_to(item_favorite_path(item_id: @item.id),  method: "delete") do %>
-							<i class="fas fa-heart"></i>
+							<i class="fas fa-heart love"></i>
 							<%end%>
 						<%else%>
 							<%=link_to(item_favorite_path(item_id: @item.id),  method: "post") do %>
-							<i class="far fa-heart"></i>
+							<i class="far fa-heart love"></i>
 							<%end%>
 						<%end%>
 					</p>

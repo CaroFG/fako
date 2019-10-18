@@ -17,7 +17,7 @@
 						<%end%>
 					</p>
 					
-					<p><%=@item.price%> EUR</p>
+					<p><%= number_to_currency @item.price, unit: "€", separator: ",", format: "%n%u" %></p>
 					<p>REF - <%=Random.rand(1000...9000)%>/<%=Random.rand(100...900)%></p>
 					<p><%=@item.description%></p>
 					<p>Le mannequin mesure: <%=Random.rand(170...185)%></p>

@@ -1,7 +1,7 @@
 class Cart < ApplicationRecord
 	belongs_to :user
 	has_many :cart_items
-	has_many :items, through: :cart_items
+	has_many :item_sizes, through: :cart_items
 
 	def total_cart_price
 		#We set a counter at 0

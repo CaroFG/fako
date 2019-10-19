@@ -29,7 +29,7 @@
 	<!-- finalize order button -->
 	<div class="row">
 		<div class="col">
-			<% if @cart.items.count == 0 %>
+			<% if @cart.item_sizes.count == 0 %>
 			<div class="mt-4 text-center"> 
 				<p>Your cart is empty</p>
 				<%= link_to "Browse items", root_path, class: "btn btn-lg btn-success mt-3" %>	 

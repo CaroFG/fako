@@ -45,7 +45,7 @@
       <li class="nav-item">
         <%= link_to cart_path(id: current_or_guest_user.cart), method: "get", class: "nav-link" do %>
        
-        <i class="fas fa-shopping-bag"></i> <span class="items-count"><%= current_or_guest_user.cart.items.count %> </span>
+        <i class="fas fa-shopping-bag"></i> <span class="items-count"><%= current_or_guest_user.cart.item_sizes.count %> </span>
 
         <%end%>
       </li>

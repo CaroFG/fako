@@ -13,6 +13,8 @@ User.destroy_all
 Item.destroy_all
 Category.destroy_all
 Type.destroy_all
+Size.destroy_all
+ItemSize.destroy_all
 
 @male = Category.create(sex: "Homme")
 @female = Category.create(sex: "Femme")
@@ -67,11 +69,11 @@ total_look_jaune = Item.create!(
 		image_path: "sangoku-woman.jpg")
 puts "Total look jaune added"
 
-total_look_jaune_xl = ItemSize.create!(item_id: total_look_jaune, size_id: @xl, stock: 100)
-total_look_jaune_l = ItemSize.create!(item_id: total_look_jaune, size_id: @l, stock: 100)
-total_look_jaune_m = ItemSize.create!(item_id: total_look_jaune, size_id: @m, stock: 100)
-total_look_jaune_s = ItemSize.create!(item_id: total_look_jaune, size_id: @s, stock: 100)
-total_look_jaune_xs = ItemSize.create!(item_id: total_look_jaune, size_id: @xs, stock: 100)
+total_look_jaune_xl = ItemSize.create!(item_id: total_look_jaune.id, size_id: @xl.id, stock: 100)
+total_look_jaune_l = ItemSize.create!(item_id: total_look_jaune.id, size_id: @l.id, stock: 100)
+total_look_jaune_m = ItemSize.create!(item_id: total_look_jaune.id, size_id: @m.id, stock: 100)
+total_look_jaune_s = ItemSize.create!(item_id: total_look_jaune.id, size_id: @s.id, stock: 100)
+total_look_jaune_xs = ItemSize.create!(item_id: total_look_jaune.id, size_id: @xs.id, stock: 100)
 
 puts "Total look jaune SIZES added"
 
@@ -84,11 +86,11 @@ chemisier = Item.create!(
 		image_path: "plant-girl.jpg")
 puts "Chemisier added"
 
-chemisier_xl =ItemSize.create!(item_id:chemisier, size_id: @xl, stock: 100)
-chemisier_l =ItemSize.create!(item_id:chemisier, size_id: @l, stock: 100)
-chemisier_m =ItemSize.create!(item_id:chemisier, size_id: @m, stock: 100)
-chemisier_s =ItemSize.create!(item_id:chemisier, size_id: @s, stock: 100)
-chemisier_xs =ItemSize.create!(item_id:chemisier, size_id: @xs, stock: 100)
+chemisier_xl =ItemSize.create!(item_id:chemisier.id, size_id: @xl.id, stock: 100)
+chemisier_l =ItemSize.create!(item_id:chemisier.id, size_id: @l.id, stock: 100)
+chemisier_m =ItemSize.create!(item_id:chemisier.id, size_id: @m.id, stock: 100)
+chemisier_s =ItemSize.create!(item_id:chemisier.id, size_id: @s.id, stock: 100)
+chemisier_xs =ItemSize.create!(item_id:chemisier.id, size_id: @xs.id, stock: 100)
 
 puts "Chemisier SIZES added"
 
@@ -101,11 +103,11 @@ total_look_bleu = Item.create!(
 	image_path: "jean.jpg")
 puts "Total look bleu added"
 
-total_look_bleu_xl = ItemSize.create!(item_id: total_look_bleu, size_id: @xl, stock: 100)
-total_look_bleu_l = ItemSize.create!(item_id: total_look_bleu, size_id: @l, stock: 100)
-total_look_bleu_m = ItemSize.create!(item_id: total_look_bleu, size_id: @m, stock: 100)
-total_look_bleu_s = ItemSize.create!(item_id: total_look_bleu, size_id: @s, stock: 100)
-total_look_bleu_xs = ItemSize.create!(item_id: total_look_bleu, size_id: @xs, stock: 100)
+total_look_bleu_xl = ItemSize.create!(item_id: total_look_bleu.id, size_id: @xl.id, stock: 100)
+total_look_bleu_l = ItemSize.create!(item_id: total_look_bleu.id, size_id: @l.id, stock: 100)
+total_look_bleu_m = ItemSize.create!(item_id: total_look_bleu.id, size_id: @m.id, stock: 100)
+total_look_bleu_s = ItemSize.create!(item_id: total_look_bleu.id, size_id: @s.id, stock: 100)
+total_look_bleu_xs = ItemSize.create!(item_id: total_look_bleu.id, size_id: @xs.id, stock: 100)
 
 puts "Total look bleu SIZES added"
 
@@ -118,11 +120,11 @@ robe = Item.create!(
 	image_path: "dress.jpg")
 puts "Robe à motif added"
 
-robe_xl = ItemSize.create!(item_id: robe, size_id: @xl, stock: 100)
-robe_l = ItemSize.create!(item_id: robe, size_id: @l, stock: 100)
-robe_m = ItemSize.create!(item_id: robe, size_id: @m, stock: 100)
-robe_s = ItemSize.create!(item_id: robe, size_id: @s, stock: 100)
-robe_xs = ItemSize.create!(item_id: robe, size_id: @xs, stock: 100)
+robe_xl = ItemSize.create!(item_id: robe.id, size_id: @xl.id, stock: 100)
+robe_l = ItemSize.create!(item_id: robe.id, size_id: @l.id, stock: 100)
+robe_m = ItemSize.create!(item_id: robe.id, size_id: @m.id, stock: 100)
+robe_s = ItemSize.create!(item_id: robe.id, size_id: @s.id, stock: 100)
+robe_xs = ItemSize.create!(item_id: robe.id, size_id: @xs.id, stock: 100)
 
 puts "Robe à motif SIZES added"
 
@@ -135,11 +137,11 @@ veste = Item.create!(
 	image_path: "man1.jpeg")
 puts "Veste added"
 
-veste_xl = ItemSize.create!(item_id: veste, size_id: @xl, stock: 100)
-veste_l = ItemSize.create!(item_id: veste, size_id: @l, stock: 100)
-veste_m = ItemSize.create!(item_id: veste, size_id: @m, stock: 100)
-veste_s = ItemSize.create!(item_id: veste, size_id: @s, stock: 100)
-veste_xs = ItemSize.create!(item_id: veste, size_id: @xs, stock: 100)
+veste_xl = ItemSize.create!(item_id: veste.id, size_id: @xl.id, stock: 100)
+veste_l = ItemSize.create!(item_id: veste.id, size_id: @l.id, stock: 100)
+veste_m = ItemSize.create!(item_id: veste.id, size_id: @m.id, stock: 100)
+veste_s = ItemSize.create!(item_id: veste.id, size_id: @s.id, stock: 100)
+veste_xs = ItemSize.create!(item_id: veste.id, size_id: @xs.id, stock: 100)
 
 puts "Veste SIZES added"
 
@@ -152,11 +154,11 @@ pantalon_slim = Item.create!(
 	image_path: "trouser-man.jpg")
 puts "Pantalon slim added"
 
-pantalon_slim_xl	= ItemSize.create!(item_id: pantalon_slim, size_id: @xl, stock: 100)
-pantalon_slim_l	= ItemSize.create!(item_id: pantalon_slim, size_id: @l, stock: 100)
-pantalon_slim_m	= ItemSize.create!(item_id: pantalon_slim, size_id: @m, stock: 100)
-pantalon_slim_s	= ItemSize.create!(item_id: pantalon_slim, size_id: @s, stock: 100)
-pantalon_slim_xs	= ItemSize.create!(item_id: pantalon_slim, size_id: @xs, stock: 100)
+pantalon_slim_xl	= ItemSize.create!(item_id: pantalon_slim.id, size_id: @xl.id, stock: 100)
+pantalon_slim_l	= ItemSize.create!(item_id: pantalon_slim.id, size_id: @l.id, stock: 100)
+pantalon_slim_m	= ItemSize.create!(item_id: pantalon_slim.id, size_id: @m.id, stock: 100)
+pantalon_slim_s	= ItemSize.create!(item_id: pantalon_slim.id, size_id: @s.id, stock: 100)
+pantalon_slim_xs	= ItemSize.create!(item_id: pantalon_slim.id, size_id: @xs.id, stock: 100)
 
 puts "Pantalon slim SIZES added"
 
@@ -169,11 +171,11 @@ pantalon_carreaux = Item.create!(
 	image_path: "check-pants.jpg")
 puts "Pantalon carreaux added"
 
-pantalon_carreaux_xl = ItemSize.create!(item_id: pantalon_carreaux, size_id: @xl, stock: 100)
-pantalon_carreaux_l	= ItemSize.create!(item_id: pantalon_carreaux, size_id: @l, stock: 100)
-pantalon_carreaux_m	= ItemSize.create!(item_id: pantalon_carreaux, size_id: @m, stock: 100)
-pantalon_carreaux_s	= ItemSize.create!(item_id: pantalon_carreaux, size_id: @s, stock: 100)
-pantalon_carreaux_xs	= ItemSize.create!(item_id: pantalon_carreaux, size_id: @xs, stock: 100)
+pantalon_carreaux_xl = ItemSize.create!(item_id: pantalon_carreaux.id, size_id: @xl.id, stock: 100)
+pantalon_carreaux_l	= ItemSize.create!(item_id: pantalon_carreaux.id, size_id: @l.id, stock: 100)
+pantalon_carreaux_m	= ItemSize.create!(item_id: pantalon_carreaux.id, size_id: @m.id, stock: 100)
+pantalon_carreaux_s	= ItemSize.create!(item_id: pantalon_carreaux.id, size_id: @s.id, stock: 100)
+pantalon_carreaux_xs	= ItemSize.create!(item_id: pantalon_carreaux.id, size_id: @xs.id, stock: 100)
 
 puts "Pantalon carreaux SIZES added"
 
@@ -186,11 +188,11 @@ veste_costume = Item.create!(
 	image_path: "charles.jpg")
 puts "Veste de costume added"
 
-veste_costume_xl = ItemSize.create!(item_id: veste_costume, size_id: @xl, stock: 100)
-veste_costume_l = ItemSize.create!(item_id: veste_costume, size_id: @l, stock: 100)
-veste_costume_m	= ItemSize.create!(item_id: veste_costume, size_id: @m, stock: 100)
-veste_costume_s	= ItemSize.create!(item_id: veste_costume, size_id: @s, stock: 100)
-veste_costume_xs	= ItemSize.create!(item_id: veste_costume, size_id: @xs, stock: 100)
+veste_costume_xl = ItemSize.create!(item_id: veste_costume.id, size_id: @xl.id, stock: 100)
+veste_costume_l = ItemSize.create!(item_id: veste_costume.id, size_id: @l.id, stock: 100)
+veste_costume_m	= ItemSize.create!(item_id: veste_costume.id, size_id: @m.id, stock: 100)
+veste_costume_s	= ItemSize.create!(item_id: veste_costume.id, size_id: @s.id, stock: 100)
+veste_costume_xs	= ItemSize.create!(item_id: veste_costume.id, size_id: @xs.id, stock: 100)
 
 puts "Veste de costume SIZES added"
 
@@ -203,16 +205,16 @@ baskets = Item.create!(
 	image_path: "colorful-sneakers.jpeg")
 puts "Baskets added"
 
-baskets_45 = ItemSize.create!(item_id: baskets, size_id: @quarante_cinq, stock: 100)
-baskets_44 = ItemSize.create!(item_id: baskets, size_id: @quarante_quatre, stock: 100)
-baskets_43	= ItemSize.create!(item_id: baskets, size_id: @quarante_trois, stock: 100)
-baskets_42	= ItemSize.create!(item_id: baskets, size_id: @quarante_deux, stock: 100)
-baskets_41	= ItemSize.create!(item_id: baskets, size_id: @quarante_et_un, stock: 100)
-baskets_40	= ItemSize.create!(item_id: baskets, size_id: @quarante, stock: 100)
-baskets_39	= ItemSize.create!(item_id: baskets, size_id: @trente_neuf, stock: 100)
-baskets_38	= ItemSize.create!(item_id: baskets, size_id: @trente_huit, stock: 100)
-baskets_37	= ItemSize.create!(item_id: baskets, size_id: @trente_sept, stock: 100)
-baskets_36	= ItemSize.create!(item_id: baskets, size_id: @trente_six, stock: 100)
+baskets_45 = ItemSize.create!(item_id: baskets.id, size_id: @quarante_cinq.id, stock: 100)
+baskets_44 = ItemSize.create!(item_id: baskets.id, size_id: @quarante_quatre.id, stock: 100)
+baskets_43	= ItemSize.create!(item_id: baskets.id, size_id: @quarante_trois.id, stock: 100)
+baskets_42	= ItemSize.create!(item_id: baskets.id, size_id: @quarante_deux.id, stock: 100)
+baskets_41	= ItemSize.create!(item_id: baskets.id, size_id: @quarante_et_un.id, stock: 100)
+baskets_40	= ItemSize.create!(item_id: baskets.id, size_id: @quarante.id, stock: 100)
+baskets_39	= ItemSize.create!(item_id: baskets.id, size_id: @trente_neuf.id, stock: 100)
+baskets_38	= ItemSize.create!(item_id: baskets.id, size_id: @trente_huit.id, stock: 100)
+baskets_37	= ItemSize.create!(item_id: baskets.id, size_id: @trente_sept.id, stock: 100)
+baskets_36	= ItemSize.create!(item_id: baskets.id, size_id: @trente_six.id, stock: 100)
 
 puts "Baskets SIZES added"
 
@@ -225,16 +227,16 @@ bottines = Item.create!(
 	image_path: "transparent-boots.jpeg")
 puts "Bottines added"
 
-bottines_45 = ItemSize.create!(item_id: bottines, size_id: @quarante_cinq, stock: 100)
-bottines_44 = ItemSize.create!(item_id: bottines, size_id: @quarante_quatre, stock: 100)
-bottines_43	= ItemSize.create!(item_id: bottines, size_id: @quarante_trois, stock: 100)
-bottines_42	= ItemSize.create!(item_id: bottines, size_id: @quarante_deux, stock: 100)
-bottines_41	= ItemSize.create!(item_id: bottines, size_id: @quarante_et_un, stock: 100)
-bottines_40	= ItemSize.create!(item_id: bottines, size_id: @quarante, stock: 100)
-bottines_39	= ItemSize.create!(item_id: bottines, size_id: @trente_neuf, stock: 100)
-bottines_38	= ItemSize.create!(item_id: bottines, size_id: @trente_huit, stock: 100)
-bottines_37	= ItemSize.create!(item_id: bottines, size_id: @trente_sept, stock: 100)
-bottines_36	= ItemSize.create!(item_id: bottines, size_id: @trente_six, stock: 100)
+bottines_45 = ItemSize.create!(item_id: bottines.id, size_id: @quarante_cinq.id, stock: 100)
+bottines_44 = ItemSize.create!(item_id: bottines.id, size_id: @quarante_quatre.id, stock: 100)
+bottines_43	= ItemSize.create!(item_id: bottines.id, size_id: @quarante_trois.id, stock: 100)
+bottines_42	= ItemSize.create!(item_id: bottines.id, size_id: @quarante_deux.id, stock: 100)
+bottines_41	= ItemSize.create!(item_id: bottines.id, size_id: @quarante_et_un.id, stock: 100)
+bottines_40	= ItemSize.create!(item_id: bottines.id, size_id: @quarante.id, stock: 100)
+bottines_39	= ItemSize.create!(item_id: bottines.id, size_id: @trente_neuf.id, stock: 100)
+bottines_38	= ItemSize.create!(item_id: bottines.id, size_id: @trente_huit.id, stock: 100)
+bottines_37	= ItemSize.create!(item_id: bottines.id, size_id: @trente_sept.id, stock: 100)
+bottines_36	= ItemSize.create!(item_id: bottines.id, size_id: @trente_six.id, stock: 100)
 
 puts "Bottines SIZES added"
 
@@ -247,16 +249,16 @@ chaussures = Item.create!(
 	image_path: "smart-shoes.jpeg")
 puts "Chaussures à lacets added"
 
-chaussures_45 = ItemSize.create!(item_id: chaussures, size_id: @quarante_cinq, stock: 100)
-chaussures_44 = ItemSize.create!(item_id: chaussures, size_id: @quarante_quatre, stock: 100)
-chaussures_43	= ItemSize.create!(item_id: chaussures, size_id: @quarante_trois, stock: 100)
-chaussures_42	= ItemSize.create!(item_id: chaussures, size_id: @quarante_deux, stock: 100)
-chaussures_41	= ItemSize.create!(item_id: chaussures, size_id: @quarante_et_un, stock: 100)
-chaussures_40	= ItemSize.create!(item_id: chaussures, size_id: @quarante, stock: 100)
-chaussures_39	= ItemSize.create!(item_id: chaussures, size_id: @trente_neuf, stock: 100)
-chaussures_38	= ItemSize.create!(item_id: chaussures, size_id: @trente_huit, stock: 100)
-chaussures_37	= ItemSize.create!(item_id: chaussures, size_id: @trente_sept, stock: 100)
-chaussures_36	= ItemSize.create!(item_id: chaussures, size_id: @trente_six, stock: 100)
+chaussures_45 = ItemSize.create!(item_id: chaussures.id, size_id: @quarante_cinq.id, stock: 100)
+chaussures_44 = ItemSize.create!(item_id: chaussures.id, size_id: @quarante_quatre.id, stock: 100)
+chaussures_43	= ItemSize.create!(item_id: chaussures.id, size_id: @quarante_trois.id, stock: 100)
+chaussures_42	= ItemSize.create!(item_id: chaussures.id, size_id: @quarante_deux.id, stock: 100)
+chaussures_41	= ItemSize.create!(item_id: chaussures.id, size_id: @quarante_et_un.id, stock: 100)
+chaussures_40	= ItemSize.create!(item_id: chaussures.id, size_id: @quarante.id, stock: 100)
+chaussures_39	= ItemSize.create!(item_id: chaussures.id, size_id: @trente_neuf.id, stock: 100)
+chaussures_38	= ItemSize.create!(item_id: chaussures.id, size_id: @trente_huit.id, stock: 100)
+chaussures_37	= ItemSize.create!(item_id: chaussures.id, size_id: @trente_sept.id, stock: 100)
+chaussures_36	= ItemSize.create!(item_id: chaussures.id, size_id: @trente_six.id, stock: 100)
 
 puts "Chaussures à lacets SIZES added"
 
@@ -269,16 +271,16 @@ boots = Item.create!(
 	image_path: "brown-boots.jpeg")
 puts "Boots added"
 
-boots_45 = ItemSize.create!(item_id: boots, size_id: @quarante_cinq, stock: 100)
-boots_44 = ItemSize.create!(item_id: boots, size_id: @quarante_quatre, stock: 100)
-boots_43	= ItemSize.create!(item_id: boots, size_id: @quarante_trois, stock: 100)
-boots_42	= ItemSize.create!(item_id: boots, size_id: @quarante_deux, stock: 100)
-boots_41	= ItemSize.create!(item_id: boots, size_id: @quarante_et_un, stock: 100)
-boots_40	= ItemSize.create!(item_id: boots, size_id: @quarante, stock: 100)
-boots_39	= ItemSize.create!(item_id: boots, size_id: @trente_neuf, stock: 100)
-boots_38	= ItemSize.create!(item_id: boots, size_id: @trente_huit, stock: 100)
-boots_37	= ItemSize.create!(item_id: boots, size_id: @trente_sept, stock: 100)
-boots_36	= ItemSize.create!(item_id: boots, size_id: @trente_six, stock: 100)
+boots_45 = ItemSize.create!(item_id: boots.id, size_id: @quarante_cinq.id, stock: 100)
+boots_44 = ItemSize.create!(item_id: boots.id, size_id: @quarante_quatre.id, stock: 100)
+boots_43	= ItemSize.create!(item_id: boots.id, size_id: @quarante_trois.id, stock: 100)
+boots_42	= ItemSize.create!(item_id: boots.id, size_id: @quarante_deux.id, stock: 100)
+boots_41	= ItemSize.create!(item_id: boots.id, size_id: @quarante_et_un.id, stock: 100)
+boots_40	= ItemSize.create!(item_id: boots.id, size_id: @quarante.id, stock: 100)
+boots_39	= ItemSize.create!(item_id: boots.id, size_id: @trente_neuf.id, stock: 100)
+boots_38	= ItemSize.create!(item_id: boots.id, size_id: @trente_huit.id, stock: 100)
+boots_37	= ItemSize.create!(item_id: boots.id, size_id: @trente_sept.id, stock: 100)
+boots_36	= ItemSize.create!(item_id: boots.id, size_id: @trente_six.id, stock: 100)
 
 puts "Boots SIZES added"
 
@@ -291,7 +293,7 @@ banane = Item.create!(
 	image_path: "fanny-pack.jpeg")
 puts "Banane added"
 
-banane_tu = ItemSize.create!(item_id: banane, size_id: @tu, stock: 100)
+banane_tu = ItemSize.create!(item_id: banane.id, size_id: @tu.id, stock: 100)
 
 puts "Banane TU added"
 
@@ -304,7 +306,7 @@ lunettes = Item.create!(
 	image_path: "sunglasses.jpeg")
 puts "Lunettes added"
 
-lunettes_tu = ItemSize.create!(item_id: lunettes, size_id: @tu, stock: 100)
+lunettes_tu = ItemSize.create!(item_id: lunettes.id, size_id: @tu.id, stock: 100)
 
 puts "Lunettes TU added"
 
@@ -317,7 +319,7 @@ boucle = Item.create!(
 	image_path: "skull-earring.jpeg")
 puts "Boucle added"
 
-boucle_tu = ItemSize.create!(item_id: boucle, size_id: @tu, stock: 100)
+boucle_tu = ItemSize.create!(item_id: boucle.id, size_id: @tu.id, stock: 100)
 
 puts "Boucle TU added"
 
@@ -330,7 +332,7 @@ montre = Item.create!(
 	image_path: "watch.jpeg")
 puts "Montre added"
 
-montre_tu = ItemSize.create!(item_id: montre, size_id: @tu, stock: 100)
+montre_tu = ItemSize.create!(item_id: montre.id, size_id: @tu.id, stock: 100)
 
 puts "Montre TU added"
 

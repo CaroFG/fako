@@ -22,9 +22,9 @@
 					<p><%=@item.description%></p>
 					<p>Le mannequin mesure: <%=Random.rand(170...185)%></p>
 					<p class="separator"></p>
-					<% ItemSize.find_by(item_id: item).each do |size| %>
-					<p><%= size.size.name %></p>
-					<end>
+					<% ItemSize.where(item_id: @item).each do |itemsize| %>
+					<p><%= Size.find_by(id: itemsize.size_id).name %></p>
+					<%end%>
 
 					<p class="separator"></p>
 					<!-- Add to cart button -->

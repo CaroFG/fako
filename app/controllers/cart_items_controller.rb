@@ -1,10 +1,12 @@
 class CartItemsController < ApplicationController
 	def create
-		@item = Item.find(params[:item_id])
+		@item_size = ItemSize.find_by(item_id: params[:item_id], size_id: params[:size_id])
 		@cart = current_or_guest_user.cart
+		puts @item
+		puts "*"*100
 
 		#Adding a new entry to CartItem
-		CartItem.create(cart_id: @cart.id, item_size_id: @item.id)
+		CartItem.create!(cart_id: @cart.id, item_size_id: @item_size.id)
 
 		# Flash message
 		flash[:success]="Produit ajouté"
@@ -26,6 +28,8 @@ class CartItemsController < ApplicationController
 			#We redirect to the current page
 			redirect_to cart_path(@cart)
 		elsif @add_or_remove == "add"
+
+		
 			CartItem.create(cart_id: @cart.id, item_size_id: params[:item_size_id])
 				#We redirect to the current page
 				redirect_to cart_path(@cart)

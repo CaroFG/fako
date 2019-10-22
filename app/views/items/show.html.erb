@@ -22,8 +22,13 @@
 					<p><%=@item.description%></p>
 					<p>Le mannequin mesure: <%=Random.rand(170...185)%></p>
 					<p class="separator"></p>
-					<% ItemSize.where(item_id: @item).each do |itemsize| %>
-					<p><%= Size.find_by(id: itemsize.size_id).name %></p>
+	
+
+					<%=form_tag(cart_items_path) do%> 
+					<%=label_tag "Selectionnez une taille"%>
+					<%=select_tag(:size_id, options_from_collection_for_select(@item.sizes.reverse, :id, :name)) %>
+					<%= hidden_field_tag(:item_id, @item.id) %>
+					<%= submit_tag "Ajouter au panier", class: "btn-sm button" %> 
 					<%end%>
 
 					<p class="separator"></p>

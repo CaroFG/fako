@@ -26,14 +26,12 @@
 
 					<%=form_tag(cart_items_path) do%> 
 					<%=label_tag "Selectionnez une taille"%>
-					<%=select_tag(:size_id, options_from_collection_for_select(@item.sizes.reverse, :id, :name)) %>
+					<%=select_tag(:size_id, options_from_collection_for_select(@item.sizes.reverse, :id, :name), class: "form-control col-3", id: "exampleFormControlSelect1" )%>
 					<%= hidden_field_tag(:item_id, @item.id) %>
-					<%= submit_tag "Ajouter au panier", class: "btn-sm button" %> 
+					<%= submit_tag "Ajouter au panier", class: "btn-sm button mt-3" %> 
 					<%end%>
 
 					<p class="separator"></p>
-					<!-- Add to cart button -->
-					<%= link_to "Ajouter", cart_items_path(item_id: @item.id), method: "POST", class: "btn-sm button" %>
 
 					<ul class="pl-3 mt-3" style="list-style-type: square;">
 						<li>Composition et entretien</li>

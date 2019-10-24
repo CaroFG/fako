@@ -31,8 +31,8 @@
 		<div class="col">
 			<% if @cart.item_sizes.count == 0 %>
 			<div class="mt-4 text-center"> 
-				<p>Your cart is empty</p>
-				<%= link_to "Browse items", root_path, class: "btn btn-lg btn-success mt-3" %>	 
+				<p>Votre panier est vide</p>
+				<%= link_to "Retour aux articles", root_path, class: "btn btn-lg btn-success mt-3" %>	 
 			</div>
 			<% elsif user_signed_in?%>
 			<div class="mt-4 text-center">  <p> Total: <%= @cart.total_cart_price %> € </p>

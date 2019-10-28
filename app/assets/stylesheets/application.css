@@ -104,6 +104,8 @@ input.form-control {
   /* Firefox */
   font-size: 17px;
  color:black;
+ width: 400px; 
+ border-radius: 0px;
  }
 
 #placeholder::-ms-input-placeholder {
@@ -111,6 +113,8 @@ input.form-control {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-size: 20px;
  color:black;
+ width: 400px; 
+ border-radius: 0px;
  }
 
 #placeholder::-ms-input-placeholder {
@@ -118,6 +122,8 @@ input.form-control {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-size: 20px; 
 color:black;
+width: 400px; 
+border-radius: 0px;
 }
 
 .fa-shopping-bag {

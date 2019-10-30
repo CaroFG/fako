@@ -32,21 +32,21 @@
 			<% if @cart.item_sizes.count == 0 %>
 			<div class="mt-4 text-center"> 
 				<p>Votre panier est vide</p>
-				<%= link_to "Retour aux articles", root_path, class: "btn btn-lg btn-success mt-3" %>	 
+				<%= link_to "Retour aux articles", root_path, class: "btn btn-dark mt-3" %>	 
 			</div>
 			<% elsif user_signed_in?%>
 			<div class="mt-4 text-center">  <p> Total: <%= @cart.total_cart_price %> € </p>
-			buy now str
+			<%= link_to "Passer la commande", new_charge_path(cart_id: @cart.id), class: "btn btn-dark mt-3" %>	
 			</div>
 			<% else%>
 			<p class="text-center mt-4">
 				Total: <%= @cart.total_cart_price %> €
 			</p>
 			<p class="text-center">
-				You are not logged in, please: 
+				Vous n'êtes pas connecté(e), veuillez: 
 			</p>
 			<div class="mt-4 text-center align-items-center">  
-				<%= link_to "Log in", new_user_session_path, class: "btn btn-lg btn-success mr-2" %>	or <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-success ml-2" %>	 
+				<%= link_to "Vous connecter", new_user_session_path, class: "btn btn-dark mr-2" %>	or <%= link_to "Créer un compte", new_user_registration_path, class: "btn btn-dark ml-2" %>	 
 			</div>
 			<%end%>
 		</div>

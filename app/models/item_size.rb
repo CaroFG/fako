@@ -11,4 +11,12 @@ class ItemSize < ApplicationRecord
 	def add_stock(number)
 	self.update(stock: self.stock + number)
 	end
+
+	def find_item
+		Item.find_by(id: self.item_id)	
+	end
+
+	def find_size
+		self.size.name
+	end
 end

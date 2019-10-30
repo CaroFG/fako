@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :types
   resources :carts, only: [:show, :update]
   resources :orders, only: [:create]
+  resources :order_items, only: [:index]
   resources :cart_items, only: [:create, :update, :destroy]
   resources :searches, only: [:index]
   resources :new_items, onlu: [:index]
+  resources :charges
 end

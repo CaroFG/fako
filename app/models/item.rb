@@ -10,4 +10,6 @@ class Item < ApplicationRecord
 	has_many :users, through: :favorites
 	has_many :item_sizes
 	has_many :sizes, through: :item_sizes
+
+	
 end

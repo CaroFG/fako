@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@orders = @user.orders
-		@order = @orders.last
-		@item_sizes = @order.item_sizes
+		if @orders.count > 0
+			@order = @orders.last
+			@item_sizes = @order.item_sizes
+		end
 	end
 
 	def dont_show

@@ -24,10 +24,18 @@
 
 				</div>
 				<div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+					<%if  @orders.present? || @order.present? %>
 					<%= render 'order_items/index' %>
+					<%else%>
+					<p> Vous n'avez pas encore effectué de commande.</p>
+					<%end%>
 				</div>
 				<div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+					<%if @orders.present? || @order.present? %>
 					<%= render 'orders/index' %>
+					<%else%>
+					<p> Vous n'avez pas encore effectué de commande.</p>
+					<%end%>
 				</div>
 			</div>
 		</div>

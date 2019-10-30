@@ -59,7 +59,9 @@
 	<div class="container-fluid" style="background-color: black">
 		<div class="row">
 			<div class="col col-12" style="text-align: center;">
-				<a class="navbar2-link mx-4"href="#"> NOUVEAUTÉS </a>
+           <%=link_to(new_items_path, class: "navbar2-link mx-4") do
+          "NOUVEAUTÉS"
+          end%>
         <%=link_to(categories_path, class: "navbar2-link mx-4") do
           "VÊTEMENTS"
           end%>

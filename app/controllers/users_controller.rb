@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 				render :edit
 			end
 		else
-			redirect_to root_path, flash[:notice] "Vous n'avez pas accès à ce profil !"
+			redirect_to root_path, flash[:notice] = "Vous n'avez pas accès à ce profil !"
 		end	
 	end
 end

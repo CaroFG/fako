@@ -1,31 +1,5 @@
 <div class="container girl-bg">
 	<div class="row mt-5 mb-4">
-		<% @items.each do |item| %>
-		<div class="col-6">
-			<div class="girl-bg" style="font-size: 16px;">
-				<%=link_to(item_path(item.id)) do
-  					image_tag item.image_path, alt:item.name, class: 'model-picture'
-				end%>
-				
-				<div style="text-align: left;" class="mt-1">
-					<p class="girl-bg"> <%= item.name %> 
-						<% if current_or_guest_user.favorited?(item) %>
-							<%=link_to(item_favorite_path(item_id: item.id),  method: "delete") do %>
-							<i class="fas fa-heart mr-4 pt-1 love"></i>
-							<%end%>
-						<%else%>
-							<%=link_to(item_favorite_path(item_id: item.id),  method: "post", remote: true) do %>
-							<i class="far fa-heart mr-4 pt-1 love"></i>
-							<%end%>
-						<%end%>
-					<br>
-						 <%= item.description %> 
-					</br>
-						<%= number_to_currency item.price, unit: "€", separator: ",", format: "%n%u" %>
-					</p>
-				</div>
-			</div>
-		</div>
-		<%end%>
+		<%= render 'layouts/index' %>
 	</div>
 </div>		

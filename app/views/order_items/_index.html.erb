@@ -1,0 +1,24 @@
+	<ul class="list-group list-group-flush mt-4">
+	<% @item_sizes.each do |item_size| %>
+		<li class="list-group-item">
+			<div class="row align-items-center">
+				<div class="col col-1">
+					<%= image_tag item_size.find_item.image_path, class: 'mr-3 rounded W35', style: "width: 50px; height: auto;" %>
+				</div> 
+				<div class="col col-8">
+					<h6 class="mt-0 mb-1"><%= item_size.find_item.name %></h6>
+					<%= item_size.find_size %>  
+					
+				</div>
+
+				<div class="col col-3 text-right">
+					<h6 class="mt-0 mb-1"><%=number_to_currency item_size.find_item.price, unit: "€", separator: ",", format: "%n%u" %> </h6>
+				</div> 
+			</div>
+		</li>
+		<% end %>
+
+		<li class="text-right mt-4">
+			<h6>Total :  <%=number_to_currency @order.price, unit: "€", separator: ",", format: "%n%u"%></h6>
+		</li>
+	</ul>

@@ -1,0 +1,12 @@
+<div class="container">
+	<% @orders.each do |order| %>
+	<div class="row">
+		<div class="col col-6 ">
+			<%=link_to order_path(order.id) do %>
+			<p>Commande du : <%= order.created_at %></p>
+			<%end%>
+		</div>
+	</div>
+	<%end%>
+
+</div>

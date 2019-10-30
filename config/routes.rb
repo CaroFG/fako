@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   resources :categories
   resources :types
   resources :carts, only: [:show, :update]
-  resources :orders, only: [:create]
+  resources :orders, only: [:index, :create, :show]
   resources :order_items, only: [:index]
   resources :cart_items, only: [:create, :update, :destroy]
   resources :searches, only: [:index]
-  resources :new_items, onlu: [:index]
+  resources :new_items, only: [:index]
   resources :charges
 end

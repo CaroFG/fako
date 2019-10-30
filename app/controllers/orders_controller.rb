@@ -1,4 +1,13 @@
 class OrdersController < ApplicationController
+	before_action :authenticate_user!, only: [:index]
+	def index
+		@orders = current_user.orders
+	end
+
+	def show
+		@order = Order.find(params[:id])
+		@item_sizes = @order.item_sizes	
+	end
 
 		def create
 

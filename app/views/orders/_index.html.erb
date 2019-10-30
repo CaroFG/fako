@@ -2,7 +2,7 @@
 	<% @orders.each do |order| %>
 	<div class="row">
 		<div class="col col-6 ">
-			<%=link_to order_path(order.id) do %>
+			<%=link_to order_path(order.id), class: "dark" do %>
 			<p>Commande du : <%= order.created_at %></p>
 			<%end%>
 		</div>

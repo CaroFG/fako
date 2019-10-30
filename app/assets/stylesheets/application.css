@@ -430,3 +430,17 @@ h4.item {
   color: black;
   text-decoration: none;
 }
+
+
+a.list-group-item.list-group-item-action.active{
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.dark {
+  color: #495057;
+}
+
+.dark:hover {
+  color: #495057;
+}

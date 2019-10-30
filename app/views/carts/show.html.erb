@@ -5,12 +5,12 @@
 		<li class="list-group-item">
 			<div class="row align-items-center">
 				<div class="col col-1">
-					<%= image_tag Item.find(item.item_id).image_path, class: 'mr-3 rounded W35', style: "width: 50px; 
+					<%= image_tag item.find_item.image_path, class: 'mr-3 rounded W35', style: "width: 50px; 
   height: auto;" %>
 				</div> 
 				<div class="col col-8">
-					<h5 class="mt-0 mb-1"><%= Item.find(item.item_id).name %> </h5>
-					<%=number_to_currency Item.find(item.item_id).price, unit: "€", separator: ",", format: "%n%u" %> 
+					<h5 class="mt-0 mb-1"><%= item.find_item.name %> </h5>
+					<%=number_to_currency item.find_item.price, unit: "€", separator: ",", format: "%n%u" %> 
 				</div>
 
 				<div class="col col-3 text-right">

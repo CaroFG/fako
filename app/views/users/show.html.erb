@@ -1,1 +1,25 @@
-<%= @user.email%>
+<div class="container mt-5">
+	<div class="row">
+		<div class="col col-6 mx-auto">
+
+			<ul class="list-group text-center">
+			  <li class="list-group-item list-group-item-dark">Mon compte</li>
+			  <li class="list-group-item"><%= @user.email%></li>
+			  <li class="list-group-item"><%= @user.first_name%></li>
+			  <li class="list-group-item"><%= @user.last_name%></li>
+			  <li class="list-group-item"><%= @user.address%></li>
+			</ul>
+			
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col col-3 mx-auto mt-3">
+			<%=link_to edit_user_path(@user), class: "btn btn-sm btn-dark" do%>
+			Modifier mes données personnelles
+			<%end%>
+		</div>
+	</div>
+</div>
+
+

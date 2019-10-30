@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   # called (once) when the user logs in, insert any code your application needs
   # to hand off from guest_user to current_user.
   def logging_in
-  	current_user.cart.items = guest_user.cart.items
+  	current_user.cart.item_sizes = guest_user.cart.item_sizes
   end
 
   def create_guest_user

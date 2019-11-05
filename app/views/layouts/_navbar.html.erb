@@ -1,52 +1,55 @@
 	<nav class="navbar navbar-expand-lg navbar-light">
-  <%=link_to("FAKO", root_path, class: "navbar-brand mt-2 ml-4", id: "brand-logo") %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <%=link_to("FAKO", root_path, class: "navbar-brand mt-2 ml-4", id: "brand-logo") %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-<%= form_tag(searches_path, method: :get,  class: "form-inline my-2 my-lg-0 mx-auto") do %>
-   <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', id: 'placeholder', placeholder: "Rechercher" %>
-   <%= button_tag :submit, class: "btn btn-custom loupe my-2 my-sm-0" do %>
+      <%= form_tag(searches_path, method: :get,  class: "form-inline my-2 my-lg-0 mx-auto") do %>
+      <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', id: 'placeholder', placeholder: "Rechercher" %>
+      <%= button_tag :submit, class: "btn btn-custom loupe my-2 my-sm-0" do %>
       <i class="fas fa-search loupe"></i>
-  <% end %>
-<% end %>
+      <% end %>
+      <% end %>
 
-	<ul class="navbar-nav mr-4 float-right">
-      <% if user_signed_in? %>
-  <li class="nav-item dropdown">
-      <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <ul class="navbar-nav mr-4 float-right">
+        <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user mr-4"></i>
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
-       <%= link_to "Me déconnecter", destroy_user_session_path , method: 'delete', class: "dropdown-item" %>
-     </div>
-   </li>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+           <% if current_user.is_admin %>
+            <%= link_to "Espace admin", admins_root_path, class: "dropdown-item" %>
+           <% end %>
+           <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
+           <%= link_to "Me déconnecter", destroy_user_session_path , method: 'delete', class: "dropdown-item" %>
+         </div>
+       </li>
 
-   <%else%>
+       <%else%>
 
-     <li class="nav-item dropdown">
-      <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user mr-4"></i>
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <%= link_to "Connectez-vous", new_user_session_path, class: "dropdown-item" %>
-       <%= link_to "Créez un compte", new_user_registration_path, class: "dropdown-item" %>
-     </div>
-   </li>
-   <%end%>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user mr-4"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "Connectez-vous", new_user_session_path, class: "dropdown-item" %>
+          <%= link_to "Créez un compte", new_user_registration_path, class: "dropdown-item" %>
+        </div>
+      </li>
+      <%end%>
 
       <li class="nav-item">
         <%= link_to favorites_path(user_id: current_or_guest_user), method: "get", class: "nav-link" do %>
-       
+
         <i class="fa-heart fas mr-4"></i> 
         <%end%>
       </li>
       <li class="nav-item">
         <%= link_to cart_path(id: current_or_guest_user.cart), method: "get", class: "nav-link" do %>
-       
+
         <i class="fas fa-shopping-bag"></i> <span class="items-count"><%= current_or_guest_user.cart.item_sizes.count %> </span>
 
         <%end%>
@@ -56,24 +59,24 @@
 </nav>
 
 
-	<div class="container-fluid" style="background-color: black">
-		<div class="row">
-			<div class="col col-12" style="text-align: center;">
-           <%=link_to(new_items_path, class: "navbar2-link mx-4") do
-          "NOUVEAUTÉS"
-          end%>
-        <%=link_to(categories_path, class: "navbar2-link mx-4") do
-          "VÊTEMENTS"
-          end%>
-				  <%=link_to(types_path(:type => Type.find_by(name: "chaussures")), class: "navbar2-link mx-4") do
+<div class="container-fluid" style="background-color: black">
+  <div class="row">
+   <div class="col col-12" style="text-align: center;">
+     <%=link_to(new_items_path, class: "navbar2-link mx-4") do
+      "NOUVEAUTÉS"
+      end%>
+      <%=link_to(categories_path, class: "navbar2-link mx-4") do
+        "VÊTEMENTS"
+        end%>
+        <%=link_to(types_path(:type => Type.find_by(name: "chaussures")), class: "navbar2-link mx-4") do
           "CHAUSSURES"
           end%>
-            <%=link_to(types_path(:type => Type.find_by(name: "accessoires")), class: "navbar2-link mx-4") do
-          "ACCESSOIRES "
-          end%>
-        <%= link_to(root_path(anchor: 'premium-title'), class: "navbar2-link mx-4") do 
-        "PREMIUM"
-        end%>
-			</div>
-		</div>
-	</div>
+          <%=link_to(types_path(:type => Type.find_by(name: "accessoires")), class: "navbar2-link mx-4") do
+            "ACCESSOIRES "
+            end%>
+            <%= link_to(root_path(anchor: 'premium-title'), class: "navbar2-link mx-4") do 
+              "PREMIUM"
+              end%>
+            </div>
+          </div>
+        </div>

@@ -16,4 +16,14 @@ Rails.application.routes.draw do
   resources :searches, only: [:index]
   resources :new_items, only: [:index]
   resources :charges
+
+  resources :admins, only: [:index, :edit, :update, :destroy]
+   # Admin dashboard
+  namespace :admins do
+    root to: "admins#index"
+    resources :users
+    resources :items
+    resources :item_sizes
+  end
+
 end

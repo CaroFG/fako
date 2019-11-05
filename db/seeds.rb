@@ -342,6 +342,7 @@ user = User.create!(
 		first_name: "John",
 		last_name: "Neige",
 		password: "dumdum",
+		is_admin: "true"
 		)
 
 puts "-----------------------------"

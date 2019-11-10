@@ -1,0 +1,31 @@
+<div class="container mt-3">
+	<div class="row">
+		<div class="colcol-6 mx-auto">
+
+			<!-- Zone du formulaire -->
+			<%= form_tag url_for(action: 'create'), method: 'post' do %>
+
+			<%= label_tag 'Nom de l\'article' %>
+			<%= text_field_tag 'name', @item.name, class: "form-control mb-3" %>
+
+
+			<%= label_tag 'Prix' %>
+			<%= number_field_tag 'price', @item.price, min: "1", class: "form-control mb-3" %>
+
+			<%= label_tag 'Description' %>
+			<%= text_area_tag 'description', @item.description, class: "form-control mb-3"  %>
+
+			<%= label_tag 'Catégorie :', nil %>
+             <%=select_tag(:category, options_from_collection_for_select(Category.all, :id, :sex), class: "form-control mb-3")%>
+
+            <%= label_tag 'Type :', nil %>
+
+            <%=select_tag(:type, options_from_collection_for_select(Type.all, :id, :name), class: "form-control mb-3") %>
+
+			<%= submit_tag "Créer l'article", class: "btn btn-dark" %>
+			<%end%>
+			
+		</div>
+	</div>
+	
+</div>

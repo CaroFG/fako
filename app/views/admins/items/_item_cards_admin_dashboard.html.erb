@@ -1,0 +1,24 @@
+<!-- Begining of the loop -->
+<% @items.order(created_at: :desc).each do |item| %>
+	<!-- CARD -->
+	<%= link_to(admins_user_path(item.id), class: "text-default p-0 m-0") do %>
+		<div class="card row mx-2 o-hidden hover-shadow-3d p-0 mt-0 mb-2">
+			<div class="card-body col p-3">
+				<div class="flex-grow-1">
+					<div class="d-flex align-items-center">
+						<div class="ml-2">
+							<h5 class="m-0 p-0">
+								<!-- Name -->
+								<%=image_tag item.image_path, class: 'mr-3 rounded W35', style: "width: 50px; height: auto;" %> <%= item.name %> 
+							</h5>
+							<!-- Description -->
+							<div class="text-muted text-small">
+								<%= item.description %>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+<% end %>

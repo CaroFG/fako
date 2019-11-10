@@ -1,0 +1,27 @@
+<div class="container mt-3">
+	<div class="row">
+		<div class="colcol-6 mx-auto">
+
+			<!-- Zone du formulaire -->
+			<%= form_tag url_for(action: 'create'), method: 'post' do %>
+			
+			<h4><%=@item.name%></h4>
+		
+			
+			<%= hidden_field_tag "item_id", @item.id %>
+			
+			<%= label_tag 'Taille :', nil %>
+            <%=select_tag(:size, options_from_collection_for_select(Size.all, :id, :name), class: "form-control mb-3")%>
+
+			<%= label_tag 'Nombre d\'articles en stock' %>
+			<%= number_field_tag 'stock', @item_size.stock, min: "0" class: "form-control mb-3" %>
+			
+
+			<%= submit_tag "Enregistrer", class: "btn btn-dark" %>
+			
+			<%end%>
+			
+		</div>
+	</div>
+	
+</div>

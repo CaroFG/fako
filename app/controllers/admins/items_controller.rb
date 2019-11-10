@@ -11,9 +11,9 @@ class Admins::ItemsController < ApplicationController
 	end
 
 	def create
-		@item = Item.new(name: params[:name], price: params[:price], description: params[:description], category: params[:category], type: params[:type])
+		@item = Item.new(name: params[:name], price: params[:price], description: params[:description], category: Category.find( params[:category].to_i), type: Type.find(params[:type].to_i))
 			if @item.save
-				redirect_to admins_users_path 
+				redirect_to new_admins_item_size_path(item_id: @item)
 				flash[:success] = "L'article a bien été crée"
 			else 
 				flash[:alert] = "Un problème est survenu, veuillez reessayer"

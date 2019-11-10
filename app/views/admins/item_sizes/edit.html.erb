@@ -1,0 +1,29 @@
+<div class="container mt-3">
+	<div class="row">
+		<!-- Partial for the dashboard -->
+		<%= render 'admins/dashboard' %>
+		<!-- Main content -->
+		<div class="col-sm-12 col-md-9">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<p>	<%=image_tag @item_size.find_item.image_path, class: 'mr-3 rounded W35', style: "width: 50px; height: auto;" %> 
+							<%=@item_size.find_item.name %></p>
+							<%=@item_size.find_size %></p>
+
+
+							<%= form_tag url_for(action: 'update'), method: "patch", class: "mt-4" do %>
+
+							<%= label_tag 'Actualiser le stock', nil, class: "font-weight-bold" %>
+							<%= number_field_tag 'title', @item_size.stock, min: "0", class: "form-control" %>
+							<%= submit_tag "Enregistrer les modifications", class: "btn btn-primary mt-2 mb-1" %> 
+
+							<% end %>
+
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+

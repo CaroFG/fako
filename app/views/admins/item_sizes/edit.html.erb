@@ -15,7 +15,7 @@
 							<%= form_tag url_for(action: 'update'), method: "patch", class: "mt-4" do %>
 
 							<%= label_tag 'Actualiser le stock', nil, class: "font-weight-bold" %>
-							<%= number_field_tag 'title', @item_size.stock, min: "0", class: "form-control" %>
+							<%= number_field_tag :stock, @item_size.stock, min: "0", class: "form-control" %>
 							<%= submit_tag "Enregistrer les modifications", class: "btn btn-primary mt-2 mb-1" %> 
 
 							<% end %>

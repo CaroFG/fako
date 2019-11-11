@@ -12,6 +12,7 @@ class Admins::ItemsController < ApplicationController
 
 	def create
 		@item = Item.new(name: params[:name], price: params[:price], description: params[:description], category: Category.find( params[:category].to_i), type: Type.find(params[:type].to_i))
+		@item.picture.attach(params[:picture])
 			if @item.save
 				redirect_to new_admins_item_size_path(item_id: @item)
 				flash[:success] = "L'article a bien été crée"

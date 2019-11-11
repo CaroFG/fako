@@ -32,7 +32,8 @@ class Admins::ItemSizesController < ApplicationController
 	end
 
 	def update
-		@item_size = ItemSize.update(stock: params[:stock].to_i)
+		@item_size = ItemSize.find(params[:id])
+		@item_size.update(stock: params[:stock].to_i)
 			if @item_size.save
 				redirect_to admins_item_sizes_path(item_id: @item_size.item_id)
 				flash[:success] = "Les informations ont bien été enregistrées"

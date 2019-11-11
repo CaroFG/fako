@@ -3,7 +3,11 @@
 		<div class="colcol-6 mx-auto">
 
 			<!-- Zone du formulaire -->
-			<%= form_tag url_for(action: 'create'), method: 'post' do %>
+			<%= form_tag url_for(action: 'create'), method: 'post', multipart: true do %>
+
+			<%= label_tag 'Photo de l\'article' %>
+			<%= file_field_tag :picture, class: "form-control mb-3" %>
+  
 
 			<%= label_tag 'Nom de l\'article' %>
 			<%= text_field_tag 'name', @item.name, class: "form-control mb-3" %>

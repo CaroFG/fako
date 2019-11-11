@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col col-6">
+		<%= label_tag 'Taille :', nil %>
+		<%=select_tag(:size, options_from_collection_for_select(Size.all, :id, :name), include_blank: true,  class: "form-control mb-3")%>
+	</div>
+
+	<div class="col col-6">
+		<%= label_tag 'Stock' %>
+		<%= number_field_tag 'stock', @item_size.stock, min: "0", class: "form-control mb-3" %>
+	</div>
+</div>
+
+

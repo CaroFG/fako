@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "static_pages#home"
   resources :items do 
     resource :favorite, only: [:create, :destroy]
+    resources :pictures, only: [:create]
   end
   resources :favorites, only: [:index]
   resources :categories
@@ -22,8 +23,9 @@ Rails.application.routes.draw do
   namespace :admins do
     root to: "admins#index"
     resources :users
-    resources :items
+    resources :items 
     resources :item_sizes
+    
   end
 
 end

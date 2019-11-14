@@ -29,7 +29,7 @@ class Admins::ItemsController < ApplicationController
 	def update
 		@item = Item.find(params[:id])
 		@item.picture.attach(params[:picture])
-		if @item.update(name: params[:name], price: params[:price], description: params[:description], category: params[:category], type: params[:type])
+		if @item.update(name: params[:name], price: params[:price], description: params[:description], category: Category.find(params[:category].to_i), type: Type.find(params[:type].to_i))
 			redirect_to admins_items_path
 			flash[:success] = "Les modifications ont bien été enregistrées"
 		else

@@ -8,18 +8,23 @@
 			<div class="d-flex align-items-center">
 				<div class="ml-2">
 					<h5 class="m-0 p-0">
-						<%= link_to(admins_item_sizes_path(item_id: item.id), class: "text-default p-0 m-0") do %>
+						
 						<!-- Name -->
 						
 						  <%= item_picture(item.id) %> <%= item.name %>  
 
-						<% end %>
+						
 					</h5>
 					<!-- Price -->
 					<p><%=number_to_currency item.price, unit: "€", separator: ",", format: "%n%u" %>  </p>
 
-					<p>
+					<p> <%= link_to(admins_item_sizes_path(item_id: item.id), class: "btn btn-dark") do %>
+						Modifier le nombre d'article en stock
+						<% end %>
 
+						<%= link_to(edit_admins_item_path(item.id), class: "btn btn-dark") do %>
+						Modifier l'article
+						<% end %>
 					</p> 
 				</div>
 			</div>

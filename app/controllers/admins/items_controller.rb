@@ -22,6 +22,22 @@ class Admins::ItemsController < ApplicationController
 			end
 	end
 
+	def edit
+		@item = Item.find(params[:id])
+	end
+
+	def update
+		@item = Item.find(params[:id])
+		@item.picture.attach(params[:picture])
+		if @item.update(name: params[:name], price: params[:price], description: params[:description], category: params[:category], type: params[:type])
+			redirect_to admins_items_path
+			flash[:success] = "Les modifications ont bien été enregistrées"
+		else
+			flash[:alert]= "Un problème est survenu, veuillez reessayer"
+			render :edit
+		end
+	end
+
 	def check_if_admin
 		if current_user.is_admin == false
 			flash[:error] = "Vous n'êtes pas un administrateur !"

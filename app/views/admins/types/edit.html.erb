@@ -1,0 +1,16 @@
+<div class="container mt-3">
+	<div class="row">
+		<%= render 'admins/dashboard' %>
+		<div class="colcol-6 mx-auto">
+
+			<!-- Zone du formulaire -->
+			<%= form_tag url_for(action: 'update'), method: 'put' do %>
+			<%= label_tag 'Nom' %>
+			<%= text_field_tag 'name', @type.name, class: "form-control mb-3" %>
+			<%= submit_tag "Enregistrer les modifications", class: "btn btn-dark" %>
+			<%end%>
+			
+		</div>
+	</div>
+	
+</div>

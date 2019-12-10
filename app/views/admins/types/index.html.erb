@@ -1,0 +1,34 @@
+<div class="container mt-3">
+	<div class="row">
+		<!-- Partial for the dashboard -->
+		<%= render 'admins/dashboard' %>
+		<!-- Main content -->
+		<div class="col-sm-12 col-md-9">
+			<div class="container">
+				<div class="row">
+						<div class="col">
+							<h4 class="p-2 bg-primary-alt"><i class="fab fa-black-tie text-primary"></i> Types</h4>
+						</div>
+					</div>
+				<div class="row">
+					<div class="col mx-2 mb-3">
+						<%= link_to "Créer un nouveau type", new_admins_type_path, class: "btn btn btn-primary" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<% @types.order(name: :asc).each do |type|%>
+						<ul class="list-group">
+							<%= link_to edit_admins_type_path(type) do %>
+							<li class="list-group-item d-flex justify-content-between align-items-center">
+								
+								<%= type.name%> <%= link_to "Supprimer", admins_type_path(type), method: :delete, data: { confirm: 'Êtes-vous sûr.e ?' }, class: "btn btn-sm btn-danger ml-3" %>
+							</li><%end%>
+						</ul>
+						<%end%>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>

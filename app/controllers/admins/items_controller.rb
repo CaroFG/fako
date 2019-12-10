@@ -38,6 +38,16 @@ class Admins::ItemsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@item = Item.find(params[:id])
+		if @item.destroy
+			redirect_to admins_items_path
+			flash[:success] = "L'article a bien été supprimé"
+		else
+			flash[:alert] = "Un problème est survenu, veuillez reessayer"
+		end
+	end
+
 	def check_if_admin
 		if current_user.is_admin == false
 			flash[:error] = "Vous n'êtes pas un administrateur !"

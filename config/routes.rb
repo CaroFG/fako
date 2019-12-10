@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     resources :users
     resources :items 
     resources :item_sizes
+    resources :types
+    resources :categories
     
   end
 

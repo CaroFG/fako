@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 	has_many :orders, through: :order_items
 	has_many :favorites
 	has_many :users, through: :favorites
-	has_many :item_sizes, dependent: :destroy
+	has_many :item_sizes
 	has_many :sizes, through: :item_sizes
 	has_one_attached :picture
 end

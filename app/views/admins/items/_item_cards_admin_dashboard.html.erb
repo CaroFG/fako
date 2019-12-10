@@ -25,6 +25,11 @@
 						<%= link_to(edit_admins_item_path(item.id), class: "btn btn-dark") do %>
 						Modifier l'article
 						<% end %>
+
+						<%= link_to(admins_item_path(item), method: :delete, data: { confirm: 'Êtes-vous sûr.e ?' }, class: "btn btn-sm btn-danger") do %>
+						Supprimer
+						<% end %>
+
 					</p> 
 				</div>
 			</div>

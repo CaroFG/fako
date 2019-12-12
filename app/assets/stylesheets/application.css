@@ -58,15 +58,20 @@ ul {
 
 
 body {
-
+  height: 100vh;
   background-color: #FCFFFE; 
-
   font-family: 'Lato';
+  display: flex;
+  flex-direction: column;
 }
 
 
 .footer {
   background-color: #F6F8F7; }
+
+.content {
+  flex: 1 0 auto;
+}
 
 li {
   font-family: 'Lato';
@@ -346,14 +351,20 @@ h3:after {
     } 
 }
 
-.container-fluid {
-  overflow: hidden;
-}
 
 .container {
   overflow: hidden;
   /*border: solid 2px black;*/
 }
+
+.container-fluid {
+  overflow: hidden;
+}
+
+#my-navbar {
+  min-height: 33px;
+}
+
 /*# sourceMappingURL=custom.css.map */
 
 .filtre {

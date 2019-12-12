@@ -183,6 +183,9 @@ h4 {
   opacity: 0; 
 }
  
+ span.char {
+  font-size: 200px;
+}
 
 h1 {
   font-family: 'Vanity';

@@ -1,46 +1,55 @@
-		<div class="container mt-4">
-			<div class="row mt-5">
-				<div class="col-8">
-					<%=image_tag @item.picture, alt:@item.name, class: 'detail'%>
-				</div>
-				<div class="col-4 mt-5 pt-5 " style="text-align: left; padding-left: 8%; padding-right: auto;">
-					<h4 class="mb-4 item"> <%=@item.name %> </h4>
-					<p>
-						<% if current_or_guest_user.favorited?(@item) %>
-							<%=link_to(item_favorite_path(item_id: @item.id),  method: "delete") do %>
-							<i class="fas fa-heart love"></i>
-							<%end%>
-						<%else%>
-							<%=link_to(item_favorite_path(item_id: @item.id),  method: "post") do %>
-							<i class="far fa-heart love"></i>
-							<%end%>
-						<%end%>
-					</p>
-					
-					<p><%= number_to_currency @item.price, unit: "€", separator: ",", format: "%n%u" %></p>
-					<p>REF - <%=Random.rand(1000...9000)%>/<%=Random.rand(100...900)%></p>
-					<p><%=@item.description%></p>
-					<p>Le mannequin mesure: <%=Random.rand(170...185)%></p>
-					<p class="separator"></p>
-	
 
-					<%=form_tag(cart_items_path) do%> 
-					<%=label_tag "Selectionnez une taille"%>
-					<%=select_tag(:size_id, options_from_collection_for_select(@item.sizes.reverse, :id, :name), class: "form-control col-3", id: "exampleFormControlSelect1" )%>
-					<%= hidden_field_tag(:item_id, @item.id) %>
-					<%= submit_tag "Ajouter au panier", class: "btn-sm button mt-3" %> 
-					<%end%>
+		<div class="container-fluid mt-4">
+			<div class="row">
+				<div class="col col-11 mx-auto">
+					<div class="card mb-3 border-0">
+						<div class="row">
+							<div class="col-md-7">
+								<%=image_tag @item.picture, alt:@item.name, class: 'card-img'%>
+							</div>
+							<div class="col-md-5">
+								<div class="card-body ml-3">
+									<h4 class="card-title item"><%=@item.name %></h4>
+									<p>
+										<% if current_or_guest_user.favorited?(@item) %>
+										<%=link_to(item_favorite_path(item_id: @item.id),  method: "delete") do %>
+										<i class="fas fa-heart love"></i>
+										<%end%>
+										<%else%>
+										<%=link_to(item_favorite_path(item_id: @item.id),  method: "post") do %>
+										<i class="far fa-heart love"></i>
+										<%end%>
+										<%end%>
+									</p>
 
-					<p class="separator"></p>
+									<p class="card-text"><%= number_to_currency @item.price, unit: "€", separator: ",", format: "%n%u" %></p>
+									<p class="card-text">REF - <%=Random.rand(1000...9000)%>/<%=Random.rand(100...900)%></p>
+									<p class="card-text"><%=@item.description%></p>
+									<p class="card-text">Le mannequin mesure: <%=Random.rand(170...185)%></p>
 
-					<ul class="pl-3 mt-3" style="list-style-type: square;">
-						<li>Composition et entretien</li>
-						<li>Voir disponibilités en magasin</li>
-						<li>Livraison, échange et retours</li>
-						<li>Partager</li>
-					</ul>
-					<%=image_tag 'icons/recycle.png', alt:"recycle icon", class: 'recycle'%>
+									<p class="separator"></p>
 
+
+									<%=form_tag(cart_items_path) do%> 
+									<%=label_tag "Selectionnez une taille"%>
+									<%=select_tag(:size_id, options_from_collection_for_select(@item.sizes.reverse, :id, :name), class: "form-control col-3", id: "exampleFormControlSelect1" )%>
+									<%= hidden_field_tag(:item_id, @item.id) %>
+									<%= submit_tag "Ajouter au panier", class: "btn-sm button mt-3" %> 
+									<%end%>
+
+									<p class="separator"></p>
+
+									<ul class="pl-3 mt-3" style="list-style-type: square;">
+										<li>Composition et entretien</li>
+										<li>Voir disponibilités en magasin</li>
+										<li>Livraison, échange et retours</li>
+										<li>Partager</li>
+									</ul>
+									<%=image_tag 'icons/recycle.png', alt:"recycle icon", class: 'recycle'%>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 @font-face {
   font-family: 'Vanity';
   src: url("/assets/Vanity-BoldWideItalic.ttf") format("truetype"); }
@@ -173,7 +174,15 @@ h4 {
   position: absolute;
   top: 50%;
   left: 50%;
+  margin-left: -50px;
   transform: translate(-50%, -50%); }
+
+.fall-down.words .char {
+  animation: slide-down 1s forwards;
+  animation-delay: calc(.5s + (.1s * var(--char-index)));
+  opacity: 0; 
+}
+ 
 
 h1 {
   font-family: 'Vanity';
@@ -319,11 +328,6 @@ h3:after {
   border: none; }
 
 
-.fall-down.words .char {
-  animation: slide-down 1s forwards;
-  animation-delay: calc(.5s + (.1s * var(--char-index)));
-  opacity: 0; 
-}
 
 @keyframes slide-down {
   from {

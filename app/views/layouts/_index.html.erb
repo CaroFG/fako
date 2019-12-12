@@ -1,27 +1,28 @@
-<% @items.each do |item| %>
-		<div class="col-6">
-			<div class="girl-bg" style="font-size: 16px;">
-				<%=link_to(item_path(item.id)) do
-  					image_tag item.picture, alt:item.name, class: 'model-picture'
+<div class="row row-cols-2">
+	<% @items.each do |item| %>
+	<div class="card-deck mx-auto">
+		<div class="card mb-4 border-light" style="width: 34rem;">
+			<%=link_to(item_path(item.id)) do
+				image_tag item.picture, alt:item.name, class: 'model-picture card-img-top'
 				end%>
-				
-				<div style="text-align: left;" class="mt-1">
-					<p class="girl-bg"> <%= item.name %> 
+				<div class="card-body">
+					<h5 class="card-title girl-bg"><%= item.name %> 
 						<% if current_or_guest_user.favorited?(item) %>
-							<%=link_to(item_favorite_path(item_id: item.id),  method: "delete") do %>
-							<i class="fas fa-heart mr-4 pt-1 love"></i>
-							<%end%>
-						<%else%>
-							<%=link_to(item_favorite_path(item_id: item.id),  method: "post") do %>
-							<i class="far fa-heart mr-4 pt-1 love"></i>
-							<%end%>
+						<%=link_to(item_favorite_path(item_id: item.id),  method: "delete") do %>
+						<i class="fas fa-heart mr-4 pt-1 love"></i>
 						<%end%>
-					<br>
-						 <%= item.description %> 
-					</br>
-						<%= number_to_currency item.price, unit: "€", separator: ",", format: "%n%u" %>
-					</p>
+						<%else%>
+						<%=link_to(item_favorite_path(item_id: item.id),  method: "post") do %>
+						<i class="far fa-heart mr-4 pt-1 love"></i>
+						<%end%>
+						<%end%>
+					</h5>
+					<p class="card-text girl-bg"><%= item.description %> </p>
+					<p class="card-text girl-bg"><%= number_to_currency item.price, unit: "€", separator: ",", format: "%n%u" %></p>
 				</div>
 			</div>
+
 		</div>
-<%end%>
+		<%end%>
+	</div>
+	
